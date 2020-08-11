@@ -144,12 +144,12 @@ class _HomeState extends State<Home> {
               ),
               Container(
                 height: 80,
-                  child: ListView.builder(itemBuilder: (context, index) {
-                    return CategoriesTile(
-                      imgUrls: categories[index].imgUrl,
-                      categorie: categories[index].categorieName,
-                    )
-                  }),
+                child: ListView.builder(itemBuilder: (context, index) {
+                  return CategoriesTile(
+                    imgUrls: categories[index].imgUrl,
+                    categorie: categories[index].categorieName,
+                  );
+                }),
               )
             ],
           ),
