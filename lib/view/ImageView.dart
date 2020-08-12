@@ -62,10 +62,67 @@ class _ImageViewState extends State<ImageView> {
                     if (kIsWeb) {
                       _launchUrl(widget.imgPath);
                     } else {
-                      _save;
+                      _save();
                     }
                   },
+                  child: Stack(
+                    children: <Widget>[
+                      Container(
+                        width: MediaQuery.of(context).size.width / 2,
+                        height: 50,
+                        alignment: Alignment.center,
+                        decoration: BoxDecoration(
+                          border: Border.all(color: Colors.white24, width: 1),
+                          borderRadius: BorderRadius.circular(40),
+                          gradient: LinearGradient(
+                              colors: [Color(0x36FFFFFF), Color(0x0FFFFFFFF)],
+                              begin: FractionalOffset.topLeft,
+                              end: FractionalOffset.bottomRight),
+                        ),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            Text(
+                              "Set Wallpaper",
+                              style: TextStyle(
+                                  color: Colors.white70,
+                                  fontSize: 15,
+                                  fontWeight: FontWeight.w500),
+                            ),
+                            SizedBox(
+                              height: 1,
+                            ),
+                            Text(
+                              kIsWeb
+                                  ? "Image will open in new Tab to download"
+                                  : "Image will be saved in gallery",
+                              style:
+                                  TextStyle(fontSize: 8, color: Colors.white70),
+                            )
+                          ],
+                        ),
+                      )
+                    ],
+                  ),
                 ),
+                SizedBox(
+                  height: 16,
+                ),
+                InkWell(
+                  onTap: () {
+                    Navigator.pop(context);
+                  },
+                  child: Text(
+                    "Cancel",
+                    style: TextStyle(
+                        color: Colors.white60,
+                        fontSize: 12,
+                        fontWeight: FontWeight.w500),
+                  ),
+                ),
+                SizedBox(
+                  height: 50,
+                )
               ],
             ),
           )
