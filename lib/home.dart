@@ -156,7 +156,37 @@ class _HomeState extends State<Home> {
                       );
                     }),
               ),
-              wallPaper(photos, context)
+              wallPaper(photos, context),
+              SizedBox(
+                height: 24,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  Text(
+                    "Phots Provided by ",
+                    style: TextStyle(
+                        color: Colors.black54,
+                        fontSize: 12,
+                        fontFamily: "Overpass"),
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      _launchUrl("https://www.pexels.com");
+                    },
+                    child: Text(
+                      "Pexels",
+                      style: TextStyle(
+                          color: Colors.blue,
+                          fontSize: 12,
+                          fontFamily: "Overpass"),
+                    ),
+                  )
+                ],
+              ),
+              SizedBox(
+                height: 24,
+              )
             ],
           ),
         ),
